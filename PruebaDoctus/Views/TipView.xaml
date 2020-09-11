@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PruebaDoctus.Views.TipView"
+             xmlns:views="clr-namespace:PruebaDoctus.Views"
+             Title="Detalles de Tip">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource BaseStack}">
+            <Label Text="{Binding Date}"
+                Style="{StaticResource LabelStyle}" />
+            <Label Text="{Binding Title}"
+                Style="{StaticResource TitleStyle}" />
+            <Label Text="{Binding Description}"
+                Style="{StaticResource DescriptionStyle}"/>
+            <Button Text="Editar"  Style="{StaticResource ButtonStyle}"
+                    Command="{Binding EditTipCommand}"
+                    CommandParameter="{x:Type views:CreateTip}"
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

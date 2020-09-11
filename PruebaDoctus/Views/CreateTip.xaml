@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PruebaDoctus.Views.CreateTip"
+             Title="Agregar Tip">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource BaseStack}">
+            <Grid RowSpacing="5">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" 
+                       Style="{StaticResource DescriptionStyle}" 
+                       Text="Fecha"/>
+                <DatePicker Grid.Row="1"
+                            Format="dd/MM/yyyy"
+                            MinimumDate="01/01/1990"
+                            MaximumDate="12/31/2020"
+                            Date="{Binding DateCreated}"
+                            TextColor="Black"/>
+                <Label Grid.Row="2" 
+                       Style="{StaticResource DescriptionStyle}" 
+                       Text="Titulo:"/>
+                <Entry Grid.Row="3" 
+                           Placeholder="Titulo"
+                       Text="{Binding Tip.Title}"
+                       TextColor="Black"/>
+                <Label Grid.Row="4" 
+                       Style="{StaticResource DescriptionStyle}" 
+                       Text="Descripción:"/>
+                <Editor  Grid.Row="5" Placeholder="Descripción" Text="{Binding Tip.Description}"
+                         TextColor="Black"/>
+                <Button Grid.Row="6" Text="Guardar" Style="{StaticResource ButtonStyle}" Command="{Binding SaveCommand}"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

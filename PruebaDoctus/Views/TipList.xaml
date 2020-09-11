@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PruebaDoctus.Views.TipList"
+             xmlns:views="clr-namespace:PruebaDoctus.Views"
+             Title="Lista de Tips">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource BaseStack}">
+            <ListView
+                ItemsSource="{Binding TipsList, Mode=TwoWay}"
+                x:Name="ListOfTips"
+                HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="80">
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Style="{StaticResource BaseStack}">
+                                    <Label Text="{Binding Date}" Style="{StaticResource DescriptionStyle}"/>
+                                    <Label Text="{Binding Title}" Style="{StaticResource LabelStyle}"/>
+                                </StackLayout>
+                                <Button Grid.Column="1" Text="Ver" Style="{StaticResource ListButton}" 
+                                        Command="{Binding Path=BindingContext.GoToDetailsCommand,Source={x:Reference Name=ListOfTips}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Grid.Column="2" Text="Borrar" Style="{StaticResource ListButton}"
+                                        Command="{Binding Path=BindingContext.DeleteTipCommand,Source={x:Reference Name=ListOfTips}}"
+                                        CommandParameter="{Binding}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Agregar" Style="{StaticResource ButtonStyle}"
+                    Command="{Binding AddNewTipCommand}"
+                    CommandParameter="{x:Type views:CreateTip}"/>
+        </StackLayout>
+    </ContentPage.Content> 
+</ContentPage>
