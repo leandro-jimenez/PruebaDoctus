@@ -11,10 +11,10 @@ using Xamarin.Forms.Xaml;
 namespace PruebaDoctus.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TipList : ContentPage
+	public partial class TipListView : ContentPage
 	{
 		TipListViewModel VM;
-		public TipList()
+		public TipListView()
 		{
 			InitializeComponent();
 			VM = new TipListViewModel(Navigation);

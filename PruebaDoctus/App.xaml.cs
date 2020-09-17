@@ -31,7 +31,7 @@ namespace PruebaDoctus
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new Views.TipList());
+			MainPage = new NavigationPage(new Views.TipListView());
 		}
 
 		protected override void OnStart()

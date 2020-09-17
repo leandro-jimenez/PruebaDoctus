@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PruebaDoctus.Services;
+using PruebaDoctus.ViewModel.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -8,9 +10,10 @@ using Xamarin.Forms;
 
 namespace PruebaDoctus.ViewModel
 {
-	public class BaseViewModel : INotifyPropertyChanged
+	public class BaseViewModel : ExtendedBindableObject//, INotifyPropertyChanged
 	{
-        public event PropertyChangedEventHandler PropertyChanged;
+        protected readonly INavigationService NavigationService;
+        /*public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -36,6 +39,11 @@ namespace PruebaDoctus.ViewModel
         protected async Task pushPage(Page page)
         {
             await (Application.Current.MainPage as NavigationPage).PushAsync(page);
+        }*/
+
+        public virtual Task InitializeAsync(object navigationData)
+        {
+            return Task.FromResult(false);
         }
     }
 }

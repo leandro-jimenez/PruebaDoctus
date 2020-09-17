@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaDoctus.Android", "Pru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaDoctus.iOS", "PruebaDoctus.iOS\PruebaDoctus.iOS.csproj", "{5456B568-7878-43E3-B690-BE2B1CD970C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaDoctus", "PruebaDoctus\PruebaDoctus.csproj", "{B249EF0C-6463-4B44-B085-FE1A2FD5500C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaDoctus", "PruebaDoctus\PruebaDoctus.csproj", "{B249EF0C-6463-4B44-B085-FE1A2FD5500C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1C76D594-FB81-4C5B-AEAA-D18F5387172D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
